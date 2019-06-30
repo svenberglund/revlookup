@@ -3,7 +3,9 @@ import sys
 
 
 host_timeout = "4" # timeout in seconds for the host command
-curl_timeout= "5" # timeout in secodns for the curl command
+ssl_timeout= "6" # timeout in seconds for the ssl command
+
+
 
 ipv4 = sys.argv[1];
 
@@ -16,15 +18,19 @@ except:
 print(host_name)
 
 
-ssl_output = subprocess.check_output(["./get_cert_cn.sh",ipv4]);
-cert_cn = ""
-if "CN=" in ssl_output:
-    cert_cn = (ssl_output.split("CN=")[1]).rstrip()
-    if "/" in cert_cn:
-        cert_cn = cert_cn.split("/")[0].strip()
+cert_cn=""
+try:
+    ssl_output = subprocess.check_output(["./get_cert_cn.sh",ipv4,ssl_timeout]);
+    cert_cn = ""
+    if "CN=" in ssl_output:
+        cert_cn = (ssl_output.split("CN=")[1]).rstrip()
+        if "/" in cert_cn:
+            cert_cn = cert_cn.split("/")[0].strip()
+            # the separator for additional trailing fields in the cert info is "/"
+except:
+    cert_cn = "cert-cn-not-resolved"
 
 print(cert_cn)
-
 
 # Alternatively to using openssl you can pull cert info with curl:
 # curl --insecure --head -v https://
