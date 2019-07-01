@@ -20,7 +20,7 @@ import sys
 host_timeout = "4" # timeout in seconds for the host command
 ssl_timeout= "6" # timeout in seconds for the openssl command
 
-ipv4 = sys.argv[1];
+ipv4 = sys.argv[1]
 
 
 # Invoking and parsing host is tested with host command version 9.10.3-P4-Ubuntu
@@ -52,7 +52,7 @@ host_name += "]"
 #
 cert_cn=""
 try:
-    ssl_output = subprocess.check_output(["./get_cert_cn.sh",ipv4,ssl_timeout]);
+    ssl_output = subprocess.check_output(["./get_cert_cn.sh",ipv4,ssl_timeout])
     if "CN=" in ssl_output:
         parsed_cn = (ssl_output.split("CN=")[1]).rstrip()
         if "/" in cert_cn:
@@ -61,7 +61,7 @@ try:
 except:
     cert_cn = "null"
 
-print("{host : "+host_name+", cn : "+cert_cn+"}")
+print "{host : "+host_name+", cn : "+cert_cn+"}"
 
 # Alternatively to using openssl we could implement this by pulling cert info with curl:
 # curl --insecure --head -v https://
