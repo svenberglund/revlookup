@@ -1,5 +1,3 @@
-This program is invoked with a IP address as first and only parameter (example):
-
 # REVDNS.PY
 
 This program is invoked with a IP address as first and only parameter (example):
