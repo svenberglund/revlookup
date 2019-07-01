@@ -1,16 +1,20 @@
 import subprocess
 import sys
 
-# This program is invoked like so (example):
+# This program is invoked with a IP address as first and only parameter (example):
 # python revdns.py 146.112.62.105
-# The output will be in JSON format (example):
+# The output will be in JSON format (a few examples):
 # {host : ["opendns.com", "www.opendns.com"], cn : "www.opendns.com"}
+# {host : ["bog02s07-in-f14.1e100.net", "gru06s09-in-f110.1e100.net", "gru06s09-in-f110.1e100.net", "bog02s07-in-f14.1e100.net"], cn : "*.google.com"}
+# {host : ["mail-wm1-f10.google.com"], cn : null}
+# {host : [null], cn : null}
 #
+# It can run on python 2.7
 # It needs to be deployed together with bash script get_cert_cn.sh
 #
-# It is intended to make a reverse check on a IP number (tested only wih IPv4)
-# We use the host command to attempt a reverse dns check and moreover we try to pull CN info from a https certificate on the endpoint
-# That way we can more often than not find the actual domain/organization of a IP even in cases when it is "hidden" by a content delivery network (amazonws, akamai, etc...)
+# It is intended to make a best effort reverse check on a IP number (tested only wih IPv4)
+# It uses the host command to attempt a reverse dns check and moreover then tries to pull CN info from a https certificate on the IP endpoint
+# That way we can more often than not find the actual domain/organization of an IP even in cases when it is "hidden" by a content delivery network (amazonws, akamai, etc...)
 # Use cases: traffic control and traffic analysis (like in a log server or in automated routines for blocking or alerting).
 
 host_timeout = "4" # timeout in seconds for the host command
