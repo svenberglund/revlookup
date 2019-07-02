@@ -42,9 +42,8 @@ try:
             host_name += ", "
         host_name += "\""+((raw_host_array[i]).split(".\n"))[0]+"\"" # if there are more than one they  are separated by punctuation and newline
 except:
-    host_name = "[null"
+    host_name = "["
 host_name += "]"
-#print(host_name)
 
 
 # Invoking and parsing openssl to pull cert info
