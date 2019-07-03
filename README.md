@@ -1,6 +1,6 @@
 # REVDNS.PY
 
-This program is invoked with a IP address as first and only parameter (example):
+This program is invoked with an IP address as first and only parameter (example):
 ```
 python revdns.py 146.112.62.105
 ```
