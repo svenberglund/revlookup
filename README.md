@@ -9,7 +9,8 @@ The output will be in JSON format (a few examples):
 {host : ["opendns.com", "www.opendns.com"], cn : "www.opendns.com"}
 {host : ["bog02s07-in-f14.1e100.net", "gru06s09-in-f110.1e100.net", "gru06s09-in-f110.1e100.net", bog02s07-in-f14.1e100.net"], cn : "*.google.com"}
 {host : ["mail-wm1-f10.google.com"], cn : null}
-{host : [null], cn : null}
+{host : [], cn : "*.acme.local"}
+{host : [], cn : null}
 ```
 
 ## Environment
