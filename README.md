@@ -26,6 +26,6 @@ That way we can more often than not find the actual domain/organization providin
 
 The reverse dns problem is indeed a tricky one (partly because dns is not one-to-one). This program is not the end of the story. In the case of http(s) traffic there are deployments where a reverse proxy server will determine how to relay traffic on a certain endpoint. Depending on things like http request headers there may be several web servers with several legit certificates for different domains responding on one single endpoint. In such cases we will not be able to determine what server or what domain a IP log entry represents, we might be able to pull the certificate of the facading reverse proxy however.
 
-In any case I have found this trick of trying to pull the Subject CN of a deployed certificate to be suprisingly useful in revealing the nature web traffic given IP logs only.
+In any case I have found this trick of trying to pull the Subject CN of a deployed certificate to be suprisingly useful in revealing the nature web traffic given IP logs only. Give it a try and you'll see what I mean.
 
 *Use cases*: traffic control and traffic analysis (it was built to enrich TCP log entries in a log server and could also be useful in automated routines for blocking or alerting).
