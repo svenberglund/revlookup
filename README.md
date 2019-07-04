@@ -14,10 +14,11 @@ The output will be in JSON format (a few examples):
 {host : ["mail-wm1-f10.google.com"], cn : null}
 {host : [], cn : null}
 ```
-Note, of course there is no guarantee that the cn field encountered will always be in correct format (domain/wildcard) 
+Note, of course there is no guarantee that the cn field encountered will always be in correct format (domain/wildcard).  
 ```
 {host : ["black.ilatina.com"], cn : "Parallels Panel/emailAddress=info@parallels.com"}
 ```
+However any such instances in a tcp traffic log would indicate traffic over self signed ssl. 
 
 ## Environment
 It can run on python 2.7\
