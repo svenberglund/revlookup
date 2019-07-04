@@ -9,7 +9,7 @@ The output will be in JSON format (a few examples):
 
 {host : ["ec2-34-250-148-148.eu-west-1.compute.amazonaws.com"], cn : "www.fortum.com"}
 {host : ["server-f45.er33.bos50.r.cloudfront.net"], cn : "*.pandora.net"}
-{host : ["bog02s07-in-f14.1e100.net", "gru06s09-in-f110.1e100.net", "gru06s09-in-f110.1e100.net", bog02s07-in-f14.1e100.net"], cn : "*.google.com"}
+{host : ["bog02s07-in-f14.1e100.net", "gru06s09-in-f110.1e100.net", "bog02s07-in-f14.1e100.net"], cn : "*.google.com"}
 {host : ["mail-wm1-f10.google.com"], cn : null}
 {host : [], cn : "*.acme.local"}
 {host : [], cn : null}
