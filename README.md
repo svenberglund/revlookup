@@ -11,6 +11,7 @@ The output will be in JSON format (a few examples):
 {host : ["server-f45.er33.bos50.r.cloudfront.net"], cn : "*.pandora.net"}
 {host : ["bog02s07.1e100.net", "gru06s09.1e100.net", "bog02s07.1e100.net"], cn : "*.google.com"}
 {host : [], cn : "www.update.microsoft.com"}
+{host : [], cn : "*.stackexchange.com"}
 {host : ["mail-wm1-f10.google.com"], cn : null}
 {host : [], cn : null}
 ```
