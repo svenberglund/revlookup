@@ -14,7 +14,7 @@ The output will be in JSON format (a few examples):
 {host : [], cn : "*.acme.local"}
 {host : [], cn : null}
 
-# Note, there is no guarantee that the cn field is in "domain format"
+# Note, there is no guarantee that the cn field will always be in "domain format"
 {host : ["black.ilatina.com"], cn : "Parallels Panel/emailAddress=info@parallels.com"}
 ```
 
