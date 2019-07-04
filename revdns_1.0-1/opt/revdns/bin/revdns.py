@@ -51,7 +51,7 @@ host_name += "]"
 #
 cert_cn=""
 try:
-    ssl_output = subprocess.check_output(["./get_cert_cn.sh",ipv4,ssl_timeout])
+    ssl_output = subprocess.check_output(["/opt/revdns/bin/get_cert_cn.sh",ipv4,ssl_timeout])
     if "CN=" in ssl_output:
         parsed_cn = (ssl_output.split("CN=")[1]).rstrip()
         if "/" in cert_cn:
