@@ -14,7 +14,7 @@ The output will be in JSON format (a few examples):
 {host : ["mail-wm1-f10.google.com"], cn : null}
 {host : [], cn : null}
 ```
-Note, there is no guarantee that the cn field will always be in "domain format"
+Note, of course there is no guarantee that the cn field encountered will always be in correct format (domain/wildcard) 
 ```
 {host : ["black.ilatina.com"], cn : "Parallels Panel/emailAddress=info@parallels.com"}
 ```
