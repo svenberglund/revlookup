@@ -19,7 +19,7 @@ Note, of course there is no guarantee that the cn field encountered will always 
 ```
 {host : ["black.ilatina.com"], cn : "Parallels Panel/emailAddress=info@parallels.com"}
 ```
-however any such instances in a tcp traffic log would indicate traffic over self signed ssl. 
+however any such instances in a tcp traffic log would itself indicate traffic over malconfigured/self signed ssl. 
 
 ## Environment
 It can run on python 2.7\
