@@ -1,14 +1,15 @@
-# REVDNS.PY
+# REVDNS
 
 This program is invoked with an IP address as first and only parameter (example):
 ```
-python revdns.py 146.112.62.105
+revdns 146.112.62.105
 ```
 The output will be in JSON format (a few examples):
 ```
 
 {host : ["ec2-34-250-148-148.eu-west-1.compute.amazonaws.com"], cn : "www.fortum.com"}
 {host : ["server-f45.er33.bos50.r.cloudfront.net"], cn : "*.pandora.net"}
+{host : ["a23-219-46-110.deploy.static.akamaitechnologies.com"], cn : "www.turner.com"}
 {host : ["bog02s07.1e100.net", "gru06s09.1e100.net", "bog02s07.1e100.net"], cn : "*.google.com"}
 {host : [], cn : "www.update.microsoft.com"}
 {host : [], cn : "*.stackexchange.com"}
@@ -16,7 +17,7 @@ The output will be in JSON format (a few examples):
 {host : [], cn : null}
 {host : ["black.ilatina.com"], cn : "Parallels Panel"} 
 ```
-The last example shows a misconfigured Subject CN.
+The last example shows a malconfigured Subject CN.
 
 ## Environment
 It can run on python 2.7\
@@ -27,7 +28,7 @@ It has been tested on Debian and it depends on `host` and `openssl` commands (wh
 ## What and why?
 This program is intended to make a best effort "reverse dns check" on an IP number (tested only wih IPv4)\
 It uses the `host` command to attempt resolving one or more host names for a given IP,  moreover then tries to pull *Subject CN* info from a https certificate, if there is one, on the IP endpoint.\
-That way we can more often than not find the actual domain/organization providing its service on a given IP even in the many cases when it is **obscured by a CDN (content delivery network such as amazonaws, cloudfront, akamai, etc...)**.
+That way we can more often than not find the actual domain/organization providing its service on a given IP even in the many cases when it is **obscured by a CDN (content delivery network such as amazonaws, cloudfront, akamaitechnologies, etc...)**.
 
 The reverse dns problem is indeed a tricky one (partly because dns is not one-to-one). This program is not the end of the story. In the case of http(s) traffic there are deployments where a reverse proxy server will determine how to relay traffic on a certain endpoint. Depending on things like http request headers there may be several web servers with several legit certificates for different domains responding on one single IP endpoint. In such cases we will not be able to determine what server or what domain a IP log traffic entry represents, we will probably be able to pull the certificate of the facading reverse proxy however.
 
