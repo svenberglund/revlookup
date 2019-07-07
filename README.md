@@ -1,6 +1,6 @@
 # REVDNS
 
-This CLI for Linux is invoked with an IP address as first and only parameter (example):
+This CLI for Linux is invoked with an IPv4 address as first and only parameter (example):
 ```
 revdns 146.112.62.105
 ```
