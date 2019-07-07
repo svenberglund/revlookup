@@ -7,7 +7,7 @@ import sys
 # {host : ["opendns.com", "www.opendns.com"], cn : "www.opendns.com"}
 # {host : ["bog02s07-in-f14.1e100.net", "gru06s09-in-f110.1e100.net", "gru06s09-in-f110.1e100.net", "bog02s07-in-f14.1e100.net"], cn : "*.google.com"}
 # {host : ["mail-wm1-f10.google.com"], cn : null}
-# {host : [null], cn : null}
+# {host : [], cn : null}
 #
 # It can run on python 2.7
 # It needs to be deployed together with bash script get_cert_cn.sh
@@ -18,7 +18,7 @@ import sys
 # Use cases: traffic control and traffic analysis (like in a log server or in automated routines for blocking or alerting).
 
 host_timeout = "4" # timeout in seconds for the host command
-ssl_timeout= "6" # timeout in seconds for the openssl command
+ssl_timeout= "5" # timeout in seconds for the openssl command
 
 ipv4 = sys.argv[1]
 
@@ -32,7 +32,7 @@ ipv4 = sys.argv[1]
 #
 # (yes there may be more than one row, more than one name in the response)
 #
-host_name="["
+host_name=""
 try:
     host_output = subprocess.check_output(["host","-W "+host_timeout,ipv4])
     raw_host_array=host_output.split("name pointer ")
@@ -42,25 +42,25 @@ try:
             host_name += ", "
         host_name += "\""+((raw_host_array[i]).split(".\n"))[0]+"\"" # if there are more than one they  are separated by punctuation and newline
 except:
-    host_name = "["
-host_name += "]"
+    host_name = ""
+host_name = "[{0}]".format(host_name)
 
 
 # Invoking and parsing openssl to pull cert info
 # See the bash script for what version of openssl it is verified with
 #
-cert_cn=""
+cert_cn="null"
 try:
     ssl_output = subprocess.check_output(["/opt/revdns/bin/get_cert_cn.sh",ipv4,ssl_timeout])
+    ssl_output = ssl_output.replace("CN =","CN=")
     if "CN=" in ssl_output:
-        parsed_cn = (ssl_output.split("CN=")[1]).rstrip()
-        if "/" in cert_cn:
-            parsed_cn = parsed_cn.split("/")[0].strip()  # the separator for additional trailing fields in the cert info is "/"
-        cert_cn ="\""+parsed_cn+"\""
+        parsed_cn = (ssl_output.split("CN=")[1]).rstrip() # peel off leading fields
+        parsed_cn = re.split("/|,",parsed_cn)[0].strip()  # peel off trailing fields, either "/" or ","
+        cert_cn ="\""+parsed_cn+"\"" # padding
 except:
     cert_cn = "null"
 
-print "{host : "+host_name+", cn : "+cert_cn+"}"
+print "{{host : {0}, cn : {1}}}".format(host_name,cert_cn)
 
 # Alternatively to using openssl we could implement this by pulling cert info with curl:
 # curl --insecure --head -v https://
