@@ -1,6 +1,6 @@
 # REVDNS
 
-This program is invoked with an IP address as first and only parameter (example):
+This CLI for Linux is invoked with an IP address as first and only parameter (example):
 ```
 revdns 146.112.62.105
 ```
@@ -19,8 +19,26 @@ The output will be in JSON format (a few examples):
 ```
 The last example shows a malconfigured Subject CN.
 
-## Environment
-It can run on python 2.7\
+## Installation
+### .deb package
+On a Debian based distro (ubuntu, mint, etc...) the program can be installed with some of the following .deb packages
+
+* [installer for 64 bit architecture](https://github.com/svenberglund/cdn-transparency-revdns/blob/amd64-build/revdns_1.0-1.deb)
+* [installer for 32 bit architecture](https://github.com/svenberglund/cdn-transparency-revdns/blob/master/revdns_1.0-1.deb)
+
+```
+dpkg -i revdns<version>.deb
+```
+... or of course with a window based handler for .deb packages if your system has one.
+
+### Manual installation
+Alternatively you can place the two files [`revdns.py` and `get_cert_cn.sh`] exectutable anywhere on your system. Although if you choose a location other than `/opt/revdns/bin` you will have to change the path to the shell script in the python script.\
+The program is then invoked as `python <path-to-executables>/revdns.py <ipv4-number>` or (better) by registering an alias on your system.
+
+
+
+## Dependencies and Environment
+This program can run on python 2.7\
 It needs to be deployed together with bash script get_cert_cn.sh\
 It has been tested on Debian and it depends on `host` and `openssl` commands (what version are curently tested and verified are documented in the comments in the scripts). 
 
