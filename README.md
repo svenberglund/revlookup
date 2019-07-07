@@ -29,21 +29,27 @@ On a Debian based distro (ubuntu, mint, etc...) the program can be installed wit
 ```
 dpkg -i revdns<version>.deb
 ```
-... or of course with a window based handler for .deb packages if your system has one.
+... or of course with a window based handler for `.deb` packages if your system has one.
 
 #### Removal
 Remove the executable `/usr/local/bin/revdns` and the folder `/opt/revdns`. 
 
 ### Manual installation
-Alternatively you can place the two files [`revdns.py` and `get_cert_cn.sh`](https://github.com/svenberglund/cdn-transparency-revdns/tree/master/revdns_1.0-1/opt/revdns/bin) exectutable anywhere on your system. Although if you choose a location other than `/opt/revdns/bin` you will have to change the path to the shell script in the python script.\
+Alternatively you can place the two files [`revdns.py` and `get_cert_cn.sh`](https://github.com/svenberglund/cdn-transparency-revdns/tree/master/revdns_1.0-1/opt/revdns/bin) exectutable anywhere on your system. Although if you choose a location other than `/opt/revdns/bin` you will have to change the path to the shell script in the python script. I.e. change the line that looks like this 
+```
+ssl_output = subprocess.check_output(["/opt/revdns/bin/get_cert_cn.sh",ipv4,ssl_timeout])
+```
+to match the path to where ever you place the `.sh` file.
+
+
 The program is then invoked as `python <path-to-executables>/revdns.py <ipv4-number>` or (better) by registering an alias on your system.
 
 
 
 ## Dependencies and Environment
-This program can run on python 2.7\
-It needs to be deployed together with bash script get_cert_cn.sh\
-It has been tested on Debian and it depends on `host` and `openssl` commands (what version are curently tested and verified are documented in the comments in the scripts). 
+This program can run on a system with python 2.7\
+It needs to be deployed together with bash script get_cert_cn.sh (wich is doen automatically with `.deb` installer).\
+It has been tested on various Debian based distros and it depends on `host` and `openssl` commands (what version are curently tested and verified are documented in the comments in the scripts). 
 
 
 ## What and why?
