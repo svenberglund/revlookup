@@ -14,12 +14,9 @@ The output will be in JSON format (a few examples):
 {host : [], cn : "*.stackexchange.com"}
 {host : ["mail-wm1-f10.google.com"], cn : null}
 {host : [], cn : null}
+{host : ["black.ilatina.com"], cn : "Parallels Panel"} 
 ```
-Note, of course there is no guarantee that the cn field encountered will always be in correct format (domain/wildcard)  
-```
-{host : ["black.ilatina.com"], cn : "Parallels Panel/emailAddress=info@parallels.com"}
-```
-however any such instances in a tcp traffic log would itself indicate traffic over malconfigured/self signed ssl. 
+The last example shows a misconfigured Subject CN.
 
 ## Environment
 It can run on python 2.7\
