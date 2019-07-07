@@ -34,7 +34,7 @@ Install with
 dpkg -i revdns<version>.deb
 ```
 ... or of course with a window based handler for `.deb` packages if your system has one.\
-**Current installers are tested with recent (2019) versions of Mint, Q4OS and Peppermint.**
+**Current installers are tested with recent (2018-2019) versions of Mint, Q4OS and Peppermint.**
 
 **Disclaimer:** The author/publisher of these executable will assume no responsability for consequences of the installation, execution or removal of `revdns`.
 
