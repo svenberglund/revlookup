@@ -51,8 +51,9 @@ With this sort of installation the program will then be invoked as `python <path
 
 
 ## Dependencies and Environment
-This program can run on a system with python 2.7\
-(The backwards compatiblity if a later python version is OS default has not yet been tested.)\
+`revdns` uses the system default python interpreter to run.\
+The program can run on a system with python 2.7\
+(Forward compatiblity if a later python version is OS default has not yet been verified.)\
 It needs to be deployed together with bash script `get_cert_cn.sh` (which is done automatically with `.deb` installer).\
 It has been tested on various Debian based distros and it depends on `host` and `openssl` commands (what version are curently tested and verified are documented in the comments in the scripts). 
 
