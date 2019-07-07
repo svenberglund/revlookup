@@ -53,7 +53,7 @@ It has been tested on various Debian based distros and it depends on `host` and 
 
 
 ## What and why?
-This program is intended to make a best effort "reverse dns check" on an IP number (tested only wih IPv4)\
+This program is intended to make a *"best effort reverse dns check"* on an IP number (tested only wih IPv4)\
 It uses the `host` command to attempt resolving one or more host names for a given IP,  moreover then tries to pull *Subject CN* info from a https certificate, if there is one, on the IP endpoint.\
 That way we can more often than not find the actual domain/organization providing its service on a given IP even in the many cases when it is **obscured by a CDN (content delivery network such as amazonaws, cloudfront, akamaitechnologies, etc...)**.
 
