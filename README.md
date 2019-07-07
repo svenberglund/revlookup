@@ -18,7 +18,7 @@ The output will be in JSON format (a few examples):
 {host : ["black.ilatina.com"], cn : "Parallels Panel"} 
 ```
 
-The first few examples in the list shows a typical situation where the `host` is actually a *content delivery network host* while the `cn` filed in these cases actually manages to achieve "cdn transparency" and will reveil the service provider on the endpoint.\ 
+The first few examples in the list shows a typical situation where the `host` is actually a *content delivery network host* while the `cn` filed in these cases actually manages to achieve "cdn transparency" hence it will reviel the service provider on the endpoint.\
 The last example shows a malconfigured Subject CN.
 
 
