@@ -32,7 +32,7 @@ dpkg -i revdns<version>.deb
 ... or of course with a window based handler for .deb packages if your system has one.
 
 ### Manual installation
-Alternatively you can place the two files [`revdns.py` and `get_cert_cn.sh`] exectutable anywhere on your system. Although if you choose a location other than `/opt/revdns/bin` you will have to change the path to the shell script in the python script.\
+Alternatively you can place the two files [revdns.py and get_cert_cn.sh] exectutable anywhere on your system. Although if you choose a location other than `/opt/revdns/bin` you will have to change the path to the shell script in the python script.\
 The program is then invoked as `python <path-to-executables>/revdns.py <ipv4-number>` or (better) by registering an alias on your system.
 
 
