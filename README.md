@@ -19,7 +19,7 @@ The output will be in JSON format (a few examples):
 ```
 
 The first few examples in the list shows a typical situation where the `host` is actually a *content delivery network host* while the `cn` filed in these cases actually manages to achieve "cdn transparency" hence it will reveal the service provider on the endpoint.\
-The last example shows a malconfigured Subject CN.
+The last example shows a case where the endpoint https certificate has a malconfigured *Subject CN*.
 
 
 ## Installation
