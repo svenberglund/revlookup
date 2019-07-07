@@ -42,7 +42,7 @@ ssl_output = subprocess.check_output(["/opt/revdns/bin/get_cert_cn.sh",ipv4,ssl_
 to match the path to where ever you place the `.sh` file.
 
 
-The program is then invoked as `python <path-to-executables>/revdns.py <ipv4-number>` or (better) by registering an alias on your system.
+With this sort of installation the program will then be invoked as `python <path-to-executables>/revdns.py <ipv4-number>` or (better) by registering an alias on your system.
 
 
 
