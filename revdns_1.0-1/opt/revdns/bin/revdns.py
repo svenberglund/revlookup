@@ -1,5 +1,8 @@
 import subprocess
 import sys
+import re
+import socket
+import sys
 
 # This program is invoked with a IP address as first and only parameter (example):
 # python revdns.py 146.112.62.105
@@ -21,6 +24,11 @@ host_timeout = "4" # timeout in seconds for the host command
 ssl_timeout= "5" # timeout in seconds for the openssl command
 
 ipv4 = sys.argv[1]
+
+try:
+    socket.inet_aton(ipv4)
+except:
+    sys.exit("Could not execute revdns. An IPv4 address needs to be provided.")
 
 
 # Invoking and parsing host is tested with host command version 9.10.3-P4-Ubuntu
