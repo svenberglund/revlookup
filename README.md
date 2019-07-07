@@ -29,6 +29,7 @@ On a Debian based distro (ubuntu, mint, etc...) the program can be installed wit
 * [installer for 64 bit architecture](https://github.com/svenberglund/cdn-transparency-revdns/blob/amd64-build/revdns_1.0-1.deb)
 * [installer for 32 bit architecture](https://github.com/svenberglund/cdn-transparency-revdns/blob/master/revdns_1.0-1.deb)
 
+Install with
 ```
 dpkg -i revdns<version>.deb
 ```
