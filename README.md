@@ -32,7 +32,8 @@ On a Debian based distro (ubuntu, mint, etc...) the program can be installed wit
 ```
 dpkg -i revdns<version>.deb
 ```
-... or of course with a window based handler for `.deb` packages if your system has one.
+... or of course with a window based handler for `.deb` packages if your system has one.\
+**Installers tested with recent (2019) versions of Mint, Q4OS and Peppermint.**
 
 #### Manual removal
 Remove the executable `/usr/local/bin/revdns` and the folder `/opt/revdns`. 
