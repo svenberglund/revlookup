@@ -31,7 +31,7 @@ dpkg -i revdns<version>.deb
 ```
 ... or of course with a window based handler for `.deb` packages if your system has one.
 
-#### Removal
+#### Manual removal
 Remove the executable `/usr/local/bin/revdns` and the folder `/opt/revdns`. 
 
 ### Manual installation
