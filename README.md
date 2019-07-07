@@ -35,11 +35,12 @@ dpkg -i revdns<version>.deb
 ... or of course with a window based handler for `.deb` packages if your system has one.\
 **Installers tested with recent (2019) versions of Mint, Q4OS and Peppermint.**
 
+Disclaimer: The author/publisher of these executable assumes no responsability for consequences of the installation, execution or removal of `revdns`.
+
+#### dpkg package removal
 ```
 dpkg --uninstall revdns
 ```
-Disclaimer: The author/publisher of these executable assumes no responsability for consequences of the installation, execution or removal of `revdns`.
-
 
 #### Manual removal
 Remove the executable `/usr/local/bin/revdns` and the folder `/opt/revdns`. 
