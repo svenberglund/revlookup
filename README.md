@@ -21,7 +21,7 @@ The last example shows a malconfigured Subject CN.
 
 ## Installation
 ### .deb package
-On a Debian based distro (ubuntu, mint, etc...) the program can be installed with some of the following .deb packages
+On a Debian based distro (ubuntu, mint, etc...) the program can be installed with some of the following `.deb` packages
 
 * [installer for 64 bit architecture](https://github.com/svenberglund/cdn-transparency-revdns/blob/amd64-build/revdns_1.0-1.deb)
 * [installer for 32 bit architecture](https://github.com/svenberglund/cdn-transparency-revdns/blob/master/revdns_1.0-1.deb)
@@ -42,7 +42,7 @@ ssl_output = subprocess.check_output(["/opt/revdns/bin/get_cert_cn.sh",ipv4,ssl_
 to match the path to where ever you place the `.sh` file.
 
 
-With this sort of installation the program will then be invoked as `python <path-to-executables>/revdns.py <ipv4-number>` or (better) by registering an alias on your system.
+With this sort of installation the program will then be invoked as `python <path-to-executables>/revdns.py <ipv4-number>` or (nicer) by [registering an alias](https://www.hostingadvice.com/how-to/set-command-aliases-linuxubuntudebian/) on your system to that very command.
 
 
 
