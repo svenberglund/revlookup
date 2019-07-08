@@ -18,7 +18,7 @@ The output will be in JSON format (a few examples):
 {host : ["black.ilatina.com"], cn : "Parallels Panel"} 
 ```
 
-The first few examples in the list show a typical situation where the `host` resolved is actually a *content delivery network host* while the `cn` field in these cases indeed manages to achieve the "cdn transparency" that we want, hence it will reveal the service provider on the endpoint.\
+The first few examples in the list show a typical situation where the `host` resolved is actually a *content delivery network host* while the `cn` field in these cases indeed manages to achieve the "cdn transparency" that we want, i.e. it will reveal the service provider on the endpoint.\
 The last example shows a case where the endpoint https certificate has a malconfigured *Subject CN*.
 
 
