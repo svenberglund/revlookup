@@ -1,5 +1,7 @@
 # REVDNS.PY
 
+## Update 2021 - On newer debian distros this program is probably broken, due to system defaulting to python3, to be updated...
+
 This program is invoked with an IP address as first and only parameter (example):
 ```
 python revdns.py 146.112.62.105
