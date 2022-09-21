@@ -1,0 +1,10 @@
+Package: revlookup
+Version: 2.0-1
+Section: base
+Priority: optional
+Architecture: amd64
+Recommends: python, host, openssl
+Maintainer: Sven Berglund <sven.berglund.public@gmail.com>
+Description: Best effort reverse name lookup
+ Given an IP address this program will try to lookup a host name.
+ It uses both host command (dns info) and tries to pull https certificate info.
