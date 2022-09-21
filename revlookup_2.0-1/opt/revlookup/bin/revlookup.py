@@ -23,12 +23,12 @@ import sys
 host_timeout = "4" # timeout in seconds for the host command
 ssl_timeout= "5" # timeout in seconds for the openssl command
 
-ipv4 = sys.argv[1]
 
 try:
+    ipv4 = sys.argv[1]
     socket.inet_aton(ipv4)
 except:
-    sys.exit("Could not execute revdns. An IPv4 address needs to be provided.")
+    sys.exit("Could not execute revlookup. An IPv4 address needs to be provided.")
 
 
 # Invoking and parsing host is tested with host command version 9.10.3-P4-Ubuntu
@@ -59,7 +59,7 @@ host_name = "[{0}]".format(host_name)
 #
 cert_cn="null"
 try:
-    ssl_output = str(subprocess.check_output(["/opt/revdns/bin/get_cert_cn.sh",ipv4,ssl_timeout]))
+    ssl_output = str(subprocess.check_output(["/opt/revlookup/bin/get_cert_cn.sh",ipv4,ssl_timeout]))
     ssl_output = ssl_output.replace("CN =","CN=")
     if "CN=" in ssl_output:
         parsed_cn = (ssl_output.split("CN=")[1]).rstrip() # peel off leading fields

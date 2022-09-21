@@ -27,12 +27,12 @@ The last example shows a case where the endpoint https certificate has a malconf
 On a Debian based distro (ubuntu, mint, etc...) the program can be installed with some of the following `.deb` packages
 
 * [installer for 64 bit architecture](https://github.com/svenberglund/cdn-transparency-revdns/blob/amd64-build/revlookup_2.0-1.deb)
-* [installer for 32 bit architecture](https://github.com/svenberglund/cdn-transparency-revdns/blob/master/revlookup_2.0-1.deb)
+* [installer for 32 bit architecture](https://github.com/svenberglund/cdn-transparency-revdns/blob/i386-build/revlookup_2.0-1.deb)
 
 For older Debian based distros using pyhon 2.7 as systemd default
 
 * [installer for 64 bit architecture](https://github.com/svenberglund/cdn-transparency-revdns/blob/amd64-build/revdns_1.0-1.deb)
-* [installer for 32 bit architecture](https://github.com/svenberglund/cdn-transparency-revdns/blob/master/revdns_1.0-1.deb)
+* [installer for 32 bit architecture](https://github.com/svenberglund/cdn-transparency-revdns/blob/i386-build/revdns_1.0-1.deb)
 
 Install with
 ```
