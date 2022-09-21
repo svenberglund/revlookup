@@ -1,1 +1,1 @@
-dpkg-deb --build revdns_1.0-1
+dpkg-deb --build revlookup_2.0-1
