@@ -52,7 +52,7 @@ dpkg --remove revlookup
 Remove the executable `/usr/local/bin/revlookup` and the folder `/opt/revlookup`. 
 
 ### Manual installation
-Alternatively you can place the two files [`revlookup.py` and `get_cert_cn.sh`](https://github.com/svenberglund/cdn-transparency-revdns/tree/master/revdns_1.0-1/opt/revdns/bin) as exectutables anywhere on your system. Although if you choose a location other than `/opt/revlookup/bin` you will have to change the path to the shell script in the python script. I.e. change the line that looks like this 
+Alternatively you can place the two files [`revlookup.py` and `get_cert_cn.sh`](https://github.com/svenberglund/cdn-transparency-revdns/tree/master/revlookup_1.0-1/opt/revlookup/bin) as exectutables anywhere on your system. Although if you choose a location other than `/opt/revlookup/bin` you will have to change the path to the shell script in the python script. I.e. change the line that looks like this 
 ```
 ssl_output = subprocess.check_output(["/opt/revlookup/bin/get_cert_cn.sh",ipv4,ssl_timeout])
 ```
