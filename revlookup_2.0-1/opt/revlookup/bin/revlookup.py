@@ -48,7 +48,7 @@ try:
     for i in range(1,raw_host_lenght): # in fist item (0th) there is never a host name
         if i>1:
             host_name += ", "
-        host_name += "\""+((raw_host_array[i]).split(".\n"))[0]+"\"" # if there are more than one they  are separated by punctuation and newline
+        host_name += "\""+((raw_host_array[i]).split(".\\n"))[0]+"\"" # if there are more than one they are ended by punctuation and newline
 except:
     host_name = ""
 host_name = host_name.replace(".\\n'","")
