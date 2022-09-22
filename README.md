@@ -24,7 +24,7 @@ The last example shows a case where the endpoint https certificate has a malconf
 
 ## Installation
 ### .deb package
-On a Debian based distro (ubuntu, mint, etc...) the program can be installed with some of the following `.deb` packages. I'm maintaining and testing these only for a very limited set of distros, see teh note below about "Current installers...".
+On a Debian based distro (ubuntu, mint, etc...) the program can be installed with some of the following `.deb` packages. I'm maintaining and testing these only for a very limited set of distros, see the note below about "Current installers...".
 
 * [installer for 64 bit architecture](https://github.com/svenberglund/cdn-transparency-revdns/blob/amd64-build/revlookup_2.0-1.deb)
 * [installer for 32 bit architecture](https://github.com/svenberglund/cdn-transparency-revdns/blob/i386-build/revlookup_2.0-1.deb)
@@ -39,7 +39,7 @@ Install with
 dpkg -i revlookup<version>.deb
 ```
 ... or of course with a window based handler for `.deb` packages if your system has one.\
-**Current installers are tested with 20.1 Cinnamon version of Linux Mint and the older (revdns_1.0-1) installers were tested with older (2018-2019) versions of Mint, Q4OS and Peppermint.**
+**Current installers are tested with 20.1 Cinnamon version of Linux Mint and the legacy (revdns_1.0-1) installers were tested with older (2018-2019) versions of Mint, Q4OS and Peppermint.**
 
 **Disclaimer:** The author/publisher of these executables/scripts will assume no responsability for consequences of the installation, execution or removal of `revlookup`.
 
@@ -73,10 +73,10 @@ It has been tested on various Debian based distros and it depends on `host` and 
 ## What, how and why?
 This program is intended to make a *"best effort name lookup"* on an IP number (tested only wih IPv4)\
 It uses the `host` command to attempt resolving one or more host names for a given IP,  moreover then tries to pull *Subject CN* info from a https certificate, if there is one, on the IP endpoint.\
-That way we can more often than not find the actual domain/organization providing its service on a given IP even in the many cases when it is **obscured by a CDN (content delivery network such as amazonaws, cloudfront, akamaitechnologies, etc...)**.
+That way we can more often than not find the actual domain/organization providing its service on a given IP even in the many cases when it is **obscured by a CDN (content delivery network such as amazonaws, cloudfront, akamaitechnologies, etc...) or lacks PTR record**.
 
-Reversiong DNS lookups are not always possible (partly because dns is not one-to-one and in other cases there is just not a PTR record). This program was made to get around that problem by looking at the https certificate also but it is not the end of the story. In the case of https traffic there are deployments where a reverse proxy server will determine how to relay traffic on a certain endpoint. Depending on things like http request headers and SNI (Server Name Indication) there may be several web servers with several legit certificates for different domains responding on one single IP endpoint. In such cases we will not be able to determine what server or what domain a IP log traffic entry represents, we will probably be able to pull the certificate of the facading reverse proxy however.
+Reversing DNS lookups are not always possible (partly because DNS-IP mapping is not one-to-one and in other cases there is just not a PTR record). This program was made to get around that problem by looking at the https certificate also but it is not the end of the story. In the case of https traffic there are deployments where a reverse proxy server will determine how to relay traffic on a certain endpoint. Depending on things like http request headers and SNI (Server Name Indication) there may be several web servers with several legit certificates for different domains responding on one single IP endpoint. In such cases we will not be able to determine what server or what domain a IP represents e.g. when we look at log traffic entries, we will probably be able to pull the certificate of the facading reverse proxy however.
 
-In any case I have found trying to pull the Subject CN of a deployed certificate to be suprisingly useful in revealing the nature web traffic given IP logs only. Give it a try and you'll see what I mean.
+In any case I have found trying to pull the Subject CN of a deployed certificate to be suprisingly useful in revealing the nature of web traffic given IP logs only. Give it a try and you'll see what I mean.
 
-*Use cases*: traffic control, traffic monitoring and traffic analysis (it was built to enrich TCP log entries in a log server and could also be useful in automated routines for blocking or alerting).
+*Use cases*: Traffic control, traffic monitoring and traffic analysis (it was built to enrich TCP log entries in a log server and could also be useful in automated routines for blocking or alerting). As a desktop tool for fasts lookups of IP:s.
