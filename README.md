@@ -29,7 +29,7 @@ On a Debian based distro (ubuntu, mint, etc...) the program can be installed wit
 * [installer for 64 bit architecture](https://github.com/svenberglund/cdn-transparency-revdns/blob/amd64-build/revlookup_2.0-1.deb)
 * [installer for 32 bit architecture](https://github.com/svenberglund/cdn-transparency-revdns/blob/i386-build/revlookup_2.0-1.deb)
 
-For older Debian based distros using pyhon 2.7 as systemd default
+For older Debian based distros using pyhon 2.7 as systemd default. Note: These legacy binaries are built with the onld name "revdns" so to invoke both the installation and the CLI itself use "revdns" instead of "revlookup" 
 
 * [installer for 64 bit architecture](https://github.com/svenberglund/cdn-transparency-revdns/blob/amd64-build/revdns_1.0-1.deb)
 * [installer for 32 bit architecture](https://github.com/svenberglund/cdn-transparency-revdns/blob/i386-build/revdns_1.0-1.deb)

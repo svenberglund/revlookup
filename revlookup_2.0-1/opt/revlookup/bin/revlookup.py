@@ -51,6 +51,7 @@ try:
         host_name += "\""+((raw_host_array[i]).split(".\n"))[0]+"\"" # if there are more than one they  are separated by punctuation and newline
 except:
     host_name = ""
+host_name = host_name.replace(".\\n'","")
 host_name = "[{0}]".format(host_name)
 
 
@@ -65,6 +66,7 @@ try:
         parsed_cn = (ssl_output.split("CN=")[1]).rstrip() # peel off leading fields
         parsed_cn = re.split("/|,",parsed_cn)[0].strip()  # peel off trailing fields, either "/" or ","
         cert_cn ="\""+parsed_cn+"\"" # padding
+        cert_cn = cert_cn.replace("\\n'","")
 except:
     cert_cn = "null"
 
