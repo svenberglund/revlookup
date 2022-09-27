@@ -41,7 +41,7 @@ dpkg -i revlookup<version>.deb
 ... or of course with a window based handler for `.deb` packages if your system has one.\
 **Current installers are tested with 20.1 Cinnamon version of Linux Mint and the legacy (revdns_1.0-1) installers were tested with older (2018-2019) versions of Mint, Q4OS and Peppermint.**
 
-**Disclaimer:** The author/publisher of these executables/scripts will assume no responsability for consequences of the installation, execution or removal of `revlookup`.
+**Disclaimer:** The author/publisher of these executables/scripts will assume [no responsability for consequences](https://github.com/svenberglund/revlookup/blob/master/LICENSE.md) of the installation, execution or removal of `revlookup`.
 
 #### dpkg package removal
 ```
